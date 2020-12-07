@@ -1,0 +1,98 @@
+----------------------------------------------------------------------------------------------------
+Table Name: GlobalST			 Parent Name: NULL
+----------------------------------------------------------------------------------------------------
+Name           Type                Initial Value       Size           Offset         Nested
+                                                                                                    
+findlargest    int                 -                   4              0              findlargest
+main           int                 -                   4              4              main
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Table Name: findlargest			 Parent Name: GlobalST
+----------------------------------------------------------------------------------------------------
+Name           Type                Initial Value       Size           Offset         Nested
+                                                                                                    
+arr            arr(0,int)          -                   0              0              NULL
+n              int                 -                   4              0              NULL
+return         int                 -                   4              4              NULL
+i              int                 -                   4              8              NULL
+max            int                 -                   4              12             NULL
+t0             int                 0                   4              16             NULL
+t1             int                                     4              20             NULL
+t2             int                                     4              24             NULL
+t3             int                 1                   4              28             NULL
+t4             int                                     4              32             NULL
+t5             int                                     4              36             NULL
+t6             int                                     4              40             NULL
+t7             int                                     4              44             NULL
+t8             int                                     4              48             NULL
+t9             int                                     4              52             NULL
+t10            int                                     4              56             NULL
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Table Name: main			 Parent Name: GlobalST
+----------------------------------------------------------------------------------------------------
+Name           Type                Initial Value       Size           Offset         Nested
+                                                                                                    
+return         int                 -                   4              0              NULL
+arr            arr(0,int)          -                   0              4              NULL
+t0             int                 5                   4              4              NULL
+t1             int                 15                  4              8              NULL
+t2             int                 12                  4              12             NULL
+t3             int                 90                  4              16             NULL
+t4             int                 84                  4              20             NULL
+n              int                 5                   4              24             NULL
+t5             int                 5                   4              28             NULL
+largest        int                 -                   4              32             NULL
+findlargest    int                 -                   4              36             NULL
+t6             int                                     4              40             NULL
+t7             int                                     4              44             NULL
+t8             int                 0                   4              48             NULL
+----------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------
+Three Address Code:
+----------------------------------------------------------------------------------------------------
+
+L0: findlargest: 
+L1:     t0 = 0
+L2:     t1 = t0 * 4
+L3:     t2 = arr[t1]
+L4:     max = t2
+L5:     t3 = 1
+L6:     i = t3
+L7:     if i < n goto L12
+L8:     goto L22
+L9:     t5 = i
+L10:     i = i + 1
+L11:     goto L7
+L12:     t6 = i * 4
+L13:     t7 = arr[t6]
+L14:     if t7 > max goto L17
+L15:     goto L9
+L16:     goto L21
+L17:     t8 = i * 4
+L18:     t9 = arr[t8]
+L19:     max = t9
+L20:     goto L9
+L21:     goto L9
+L22:     return max
+
+L23: main: 
+L24:     t0 = 5
+L25:     t1 = 15
+L26:     t2 = 12
+L27:     t3 = 90
+L28:     t4 = 84
+L29:     arr = arr
+L30:     t5 = 5
+L31:     n = t5
+L32:     param arr
+L33:     param n
+L34:     t6 = call findlargest, 2
+L35:     largest = t6
+L36:     t8 = 0
+L37:     return t8
+----------------------------------------------------------------------------------------------------
